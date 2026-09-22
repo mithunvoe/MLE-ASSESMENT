@@ -9,3 +9,4 @@ reports/*.aux
 reports/*.log
 .DS_Store
 private/
+scripts/

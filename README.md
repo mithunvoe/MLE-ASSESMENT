@@ -38,7 +38,6 @@ freight/
   backtest.py            rolling-origin backtests, quote_signal and unseen-city checks
   train.py               fit on all labelled data (and optionally run the backtests)
   predict.py             write the two prediction files
-scripts/make_figures.py  figures for the report
 tests/                   unit tests (pytest)
 outputs/                 validation_predictions.csv, december_chart_inputs.csv, scorer chart
 reports/                 report.pdf, figures, backtest tables, training log
@@ -59,7 +58,6 @@ python -m freight.predict                 # outputs/validation_predictions.csv a
 python score.py --predictions outputs/validation_predictions.csv \
                 --december-predictions outputs/december_chart_inputs.csv \
                 --output-dir outputs/scorer_results
-python scripts/make_figures.py            # figures used in the report
 ```
 
 `make all` runs the same sequence. Drop `--backtest` to only fit the final model

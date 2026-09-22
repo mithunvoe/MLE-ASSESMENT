@@ -1,6 +1,6 @@
 PY ?= .venv/bin/python
 
-.PHONY: setup test train predict score figures all clean
+.PHONY: setup test train predict score all clean
 
 setup:
 	python3 -m venv .venv
@@ -20,10 +20,7 @@ score:
 	    --december-predictions outputs/december_chart_inputs.csv \
 	    --output-dir outputs/scorer_results
 
-figures:
-	$(PY) scripts/make_figures.py
-
-all: test train predict score figures
+all: test train predict score
 
 clean:
-	rm -rf outputs models/*.joblib reports/backtest_results.csv reports/*_check.csv reports/figures
+	rm -rf outputs models/*.joblib reports/backtest_results.csv reports/*_check.csv

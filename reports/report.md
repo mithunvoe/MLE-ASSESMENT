@@ -1,7 +1,9 @@
 ---
 title: "Freight rate prediction"
 subtitle: "Machine Learning Engineer assessment: data, validation design, model and results"
-author: "Kabya Mithun Saha"
+author: |
+  Kabya Mithun Saha\
+  kabyasaha1812@gmail.com
 geometry: margin=2.2cm
 fontsize: 10.5pt
 mainfont: "DejaVu Serif"
