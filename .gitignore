@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+models/*.joblib
+reports/report.tex
+reports/*.aux
+reports/*.log
+.DS_Store
+private/

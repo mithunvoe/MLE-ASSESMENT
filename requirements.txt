@@ -1,0 +1,12 @@
+# Scorer requirements (as provided by Spotter)
+matplotlib>=3.8,<4
+numpy>=1.26,<3
+pandas>=2.0,<3
+
+# Modelling
+lightgbm>=4.3,<5
+scikit-learn>=1.4,<2
+joblib>=1.3
+
+# Tests
+pytest>=8

@@ -1,0 +1,49 @@
+48,000 training loads, 677 flagged as corrupted labels
+
+Rolling-origin backtest, mean over folds:
+                                          MAE_clean  ...  MAPE_all
+model                                                ...          
+median rate per mile by equipment           167.072  ...    10.534
+log-linear regression                        47.460  ...     4.404
+lightgbm: load + calendar                    92.927  ...     6.152
+lightgbm: + market index                     67.157  ...     5.120
+lightgbm: + market index + day index         51.212  ...     4.539
+hybrid: linear time component + lightgbm     37.610  ...     3.986
+
+[6 rows x 6 columns]
+
+quote_signal under random vs time-based validation (clean MAE):
+                           without quote_signal  with quote_signal
+random 5-fold, all months                38.028             35.005
+time-based, test May                     43.203             37.593
+time-based, test Jun                     74.724             84.538
+time-based, test Jul                     45.880             40.106
+time-based, test Aug                     61.897             68.712
+time-based, test Sep                     43.074             40.313
+time-based, test Oct                     60.078             55.780
+
+Held-out cities [np.str_('Greensboro'), np.str_('Milwaukee'), np.str_('Salt Lake City'), np.str_('Houston'), np.str_('New York'), np.str_('Amarillo')]:
+                                  MAE   RMSE  MAPE    R2     n
+loads touching held-out cities 45.970 64.766 2.143 0.997  1672
+other loads                    40.132 57.833 1.770 0.998  7707
+
+backtests took 426s
+
+Time component coefficients (log scale):
+log_market_index       0.141
+log_market_index_sq    0.115
+trend_years            0.064
+dow_1                 -0.002
+dow_2                  0.000
+dow_3                 -0.007
+dow_4                  0.001
+dow_5                  0.009
+dow_6                 -0.001
+quarter_end_0_3        0.052
+quarter_end_4_7        0.033
+quarter_end_8_14       0.016
+quarter_end_15_21      0.021
+quarter_end_22_30      0.003
+Name: coefficient, dtype: float64
+
+saved /mnt/NewVolume2/Android Projects/ena/models/hybrid.joblib
